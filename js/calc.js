@@ -1,12 +1,13 @@
-var newData = [];
-var i = 0;
+for (var i = 0; i < data.length; i++) {
+    if (data[i] === undefined || data[i] === NaN || data[i] === '' || data[i] === 'object' || data[i] === true || data[i] === false) {
+        data.splice(i, 1);
+    }
 
-for (i = 0; i < data.length; i++) {
-    if (data[i] !== '' && data[i] !== undefined) {
+    if (data[i] !== '' && data[i] !== undefined && data[i] !== 'object') {
         if (!isNaN(data[i]) && data[i] !== null) {
-            newData.push(Number(data[i]) + 1);
+            data[i] = (Number(data[i]) + 1);
         } else {
-            newData.push(data[i]);
+            data[i] = data[i];
         }
     }
 }

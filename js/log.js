@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-
+    
     const objCounter = {
         moreZero: 0,
         lessZero: 0,
@@ -7,17 +7,16 @@ document.addEventListener('DOMContentLoaded', function() {
         equalNull: 0,
     };
     
-    objCounter.elementCount = newData.length;
+    objCounter.elementCount = data.length;
     
-    for (i = 0; i < newData.length; i++) {
-        console.log(newData[i]);
-        if (!isNaN(newData[i]) && newData[i] !== null) {
-            if (newData[i] > 0) {
+    for (i = 0; i < data.length; i++) {
+        if (!isNaN(data[i]) && data[i] !== null) {
+            if (data[i] > 0) {
                 objCounter.moreZero++;
-            } else if (newData[i] < 0) {
+            } else if (data[i] < 0) {
                 objCounter.lessZero++;
             }
-        } else if (newData[i] === null) {
+        } else if (data[i] === null) {
             objCounter.equalNull++;
         }
     }
