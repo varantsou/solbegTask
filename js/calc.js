@@ -1,9 +1,12 @@
 var newData = [];
+var i = 0;
 
-data.forEach((item) => {
-    if (!isNaN(item) && item !== null) {
-        newData.push(Number(item) + 1);
-    } else {
-        newData.push(item);
+for (i = 0; i < data.length; i++) {
+    if (data[i] !== '' && data[i] !== undefined) {
+        if (!isNaN(data[i]) && data[i] !== null) {
+            newData.push(Number(data[i]) + 1);
+        } else {
+            newData.push(data[i]);
+        }
     }
-});
+}
