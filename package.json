@@ -1,0 +1,30 @@
+{
+  "name": "task1",
+  "version": "1.0.0",
+  "description": "ssdf",
+  "main": "lint.eslintrc.json",
+  "dependencies": {
+    "babel-eslint": "^10.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  },
+  "scripts": {
+    "test": "eslint start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/varantsou/solbegTask.git"
+  },
+  "keywords": [
+    "eslint"
+  ],
+  "author": "varantsou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/varantsou/solbegTask/issues"
+  },
+  "homepage": "https://github.com/varantsou/solbegTask#readme"
+}
