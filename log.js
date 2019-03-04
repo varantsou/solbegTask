@@ -1,5 +1,3 @@
-// console.log(newData);
-
 (function(){
     var objCounter = {
         moreZero: 0,
@@ -34,7 +32,6 @@
 
 
     function writeStatistic(statistic){
-        console.log(statistic);
         console.log('Elements count:', statistic.elementCount);
         console.log('Elements more than zero:', statistic.moreZero);
         console.log('Elements less than zero:', statistic.lessZero);

@@ -16,18 +16,9 @@ var newData = [];
 data.forEach(function(item){
     if (typeof(item) == 'number'){
         newData.push(Number(item + 1))
-    }
-    
-    else if(typeof(item) == 'string'){
-        if (!isNaN(item)){
+    }   else if(typeof(item) == 'string' && !isNaN(item) ){
             newData.push(Number(item) + 1)
-        }   else{
+    }   else{
             newData.push(item)
-        }
-    }   
-
-    else{
-        newData.push(item)
     }
-     
 })
