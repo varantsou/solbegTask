@@ -8,18 +8,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function objConstruct() {
         var typeN = random(minType, maxType);
         var typeNValue = random(minTypeValue, maxTypeValue);
-
         var obj = {};
 
         obj[`type${typeN}`] = typeNValue;
-
-        obj.getType = function () {
-            return typeN;
-        };
-
-        obj.getTypeValue = function () {
-            return typeNValue;
-        };
+        obj.getType = () => typeN;
+        obj.getTypeValue = () => typeNValue;
 
         return obj;
     }
@@ -27,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     for (var i = 0; i < units; i++) {
         var a = objConstruct();
         var newChild = document.createElement('div');
+
         console.log(` Element${i}: Type${a.getType()} TypeValue: ${a.getTypeValue()}`);
         newChild.textContent = `Element: ${i}: Type: ${a.getType()} TypeValue: ${a.getTypeValue()}`;
         document.querySelector('.items').appendChild(newChild);
