@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     var sumObj = {};
 
-    data.forEach( (obj) => {
+    data.forEach((obj) => {
         var type = obj.getType();
         var typeValue = obj.getTypeValue();
 
-        if (!sumObj.hasOwnProperty(type)) {
+        if (!Object.prototype.hasOwnProperty.call(sumObj, type)) {
             sumObj[type] = typeValue;
         } else {
             sumObj[type] += typeValue;
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     for (var prop in sumObj) {
-        console.log('Sum of type' + prop + ' = ' + sumObj[prop]);
+        console.log(`Sum of type ${prop} = ${sumObj[prop]}`);
 
         var newTotal = document.createElement('div');
         newTotal.innerHTML = `Sum of type ${prop} = ${sumObj[prop]}`;
