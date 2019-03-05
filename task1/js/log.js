@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    
     const objCounter = {
         moreZero: 0,
         lessZero: 0,
@@ -33,3 +32,5 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.equal-count > span').innerHTML = objCounter.equalZero;
     document.querySelector('.null-count > span').innerHTML = objCounter.equalNull;
 });
+
+
