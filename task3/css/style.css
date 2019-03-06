@@ -17,6 +17,12 @@ body{
     align-items: center;
 }
 
+.setting{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 /* start unit */
 
 .unit{
@@ -47,9 +53,9 @@ body{
 
 .control{
     display: flex;
-    width: 165px;
+    width: 135px;
     flex-wrap: wrap;
-    padding: 0 15px;
+    margin: 0 0 0 15px;
 }
 
 .control__btn{
