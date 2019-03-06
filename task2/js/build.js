@@ -18,10 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     for (var i = 0; i < units; i++) {
+
         var a = objConstruct();
         var newChild = document.createElement('div');
 
         console.log(` Element${i}: Type${a.getType()} TypeValue: ${a.getTypeValue()}`);
+
         newChild.textContent = `Element: ${i}: Type: ${a.getType()} TypeValue: ${a.getTypeValue()}`;
         document.querySelector('.items').appendChild(newChild);
 
