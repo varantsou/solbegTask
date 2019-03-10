@@ -1,0 +1,45 @@
+.unit {
+    border: 1px solid #9da0a4;
+    height: fit-content;
+    padding: 15px;
+}
+
+.unit__health {
+    width: max-content;
+    max-width: 100%;
+    border: 1px solid #9da0a4;
+    padding: 2px 10px;
+    text-align: center;
+    margin: 0 auto 12px;
+}
+
+.unit__status {
+    width: max-content;
+    max-width: 100%;
+    border: 1px solid #9da0a4;
+    padding: 2px 10px;
+    text-align: center;
+    margin: 0 auto 2px;
+}
+
+.unit__img {
+    /*background-color: pink;*/
+    width: 100px;
+    height: 115px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.unit.zombie-mad .unit__img {
+    background-image: url('../img/zombie-mad.gif');
+}
+
+.unit.zombie-strong .unit__img {
+    background-image: url('../img/zombie-strong.gif');
+}
+
+.unit.zombie-dead .unit__img {
+    background-image: url('../img/zombie-dead.gif');
+}
+
