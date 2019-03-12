@@ -1,20 +1,46 @@
-function Engine() {
+function Engine(callback, objectLocation) {
+    var zombieObj = {};
+    var self = this;
 
-    this.zombieObj  = {};
+    this.createStrong = function() {
+        zombieObj = new ZombieStrong(function(eventName) {
+            // console.log('Engine callback ==', eventName);
 
-    this.create = function () {
-        if (event.target.dataset.type == 'strong') {
-            this.zombieObj = new ZombieStrong('ZombieStrong');
-        } else if (event.target.dataset.type == 'mad') {
-            this.zombieObj = new ZombieMad('ZombieMad')
-        }
+            if (eventName === 'deleted') {
+                self.remove();
+            }
+
+            callback(eventName);
+        }, objectLocation);
+
+        zombieObj.createUnit();
     };
 
-    this.change = function (damage) {
-        damage === 'full' ?  this.zombieObj.hit = 0 : this.zombieObj.hit -= constants.ZOMBIE_HIT_DAMAGE;
+    this.createMad = function () {
+        zombieObj = new ZombieMad(function(eventName) {
+            // console.log('Engine callback ==', eventName);
 
-        if (this.zombieObj.hit <= 0) {
-            this.zombieObj.type = 'zombie-dead';
-        }
+            if (eventName === 'deleted') {
+                self.remove();
+            }
+
+            callback(eventName);
+        }, objectLocation);
+
+        zombieObj.createUnit();
+    };
+
+    this.damage = function () {
+        zombieObj.hit -= 10;
+        zombieObj.change(zombieObj.hit);
+    };
+
+    this.kill = function () {
+        zombieObj.hit = 0;
+        zombieObj.change(zombieObj.hit);
+    };
+
+    this.remove = function () {
+        zombieObj = null;
     };
 }

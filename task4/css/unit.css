@@ -1,9 +1,3 @@
-.unit {
-    border: 1px solid #9da0a4;
-    height: fit-content;
-    padding: 15px;
-}
-
 .unit__health {
     width: max-content;
     max-width: 100%;
@@ -23,7 +17,6 @@
 }
 
 .unit__img {
-    /*background-color: pink;*/
     width: 100px;
     height: 115px;
     background-repeat: no-repeat;
@@ -31,15 +24,15 @@
     background-size: contain;
 }
 
-.unit.zombie-mad .unit__img {
+.zombie-mad {
     background-image: url('../img/zombie-mad.gif');
 }
 
-.unit.zombie-strong .unit__img {
+.zombie-strong {
     background-image: url('../img/zombie-strong.gif');
 }
 
-.unit.zombie-dead .unit__img {
+.zombie-dead {
     background-image: url('../img/zombie-dead.gif');
 }
 

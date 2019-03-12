@@ -1,58 +1,61 @@
-document.addEventListener("DOMContentLoaded", function() {
-    var buttonList = document.querySelector('.panel');
-    var btns = document.querySelectorAll('.btn');
-    var unit = document.querySelector('.unit');
-    var unitHit = document.querySelector('.unit__health');
-    var zombieControl = new Engine();
-    var timeRefresh = constants.ZOMBIE_DELETE_TIMEOUT;
+document.addEventListener("DOMContentLoaded", function(event) {
+    var btnsCreate = document.querySelectorAll('.btn--create');
+    var btnsChange = document.querySelectorAll('.btn--change');
+    var btnCreateStrong = document.querySelector('.btn--create-strong');
+    var btnCreateMad = document.querySelector('.btn--create-mad');
+    var btnDamage = document.querySelector('.btn--damage');
+    var btnKill = document.querySelector('.btn--kill');
+    var objectLocation = document.querySelector('.area');
 
-    buttonList.addEventListener('click', function () {
+    var engine = new Engine(function(eventName) {
+        if (eventName === 'created') {
+            disableButton(btnsCreate);
+        } else if (eventName === 'killed') {
+            disableButton(btnsCreate);
+            disableButton(btnsChange);
+        } else if (eventName === 'deleted') {
+            disableButton(btnsChange);
+            enabledButton(btnsCreate);
+        }
+    }, objectLocation);
+
+    btnCreateStrong.addEventListener('click', function(event) {
         if (!event.target.classList.contains('btn--disabled')) {
-            if (event.target.classList.contains('btn--create')) {
-                zombieControl.create();
-            } else {
-                if (event.target.dataset.change === 'damage') {
-                    zombieControl.change();
-                } else if (event.target.dataset.change === 'kill') {
-                    zombieControl.change('full');
-                }
-            }
-
-            // first argument will be disabled, second - enabled
-            disableButton('btn--create', 'btn--change');
-            render(zombieControl.zombieObj);
+            engine.createStrong();
+            disableButton(btnsCreate);
+            enabledButton(btnsChange);
         }
     });
 
-    function disableButton(disabled, enabled) {
-        btns.forEach(function(btn) {
-            if (btn.classList.contains(disabled)) {
-                btn.classList.add('btn--disabled');
-            }
+    btnCreateMad.addEventListener('click', function(event) {
+        if (!event.target.classList.contains('btn--disabled')) {
+            engine.createMad();
+            disableButton(btnsCreate);
+            enabledButton(btnsChange);
+        }
+    });
 
-            if (btn.classList.contains(enabled)) {
-                btn.classList.remove('btn--disabled');
-            }
+    btnDamage.addEventListener('click', function(event) {
+        if (!event.target.classList.contains('btn--disabled')) {
+            engine.damage();
+        }
+    });
+
+    btnKill.addEventListener('click', function(event) {
+        if (!event.target.classList.contains('btn--disabled')) {
+            engine.kill();
+        }
+    });
+
+    function disableButton(disabledBtns) {
+        disabledBtns.forEach(function(btn) {
+            btn.classList.add('btn--disabled');
         });
     }
 
-    function reset() {
-        disableButton('btn');
-
-        setTimeout(function () {
-            unit.className = 'unit';
-            unitHit.textContent = '100%';
-            disableButton('btn--change', 'btn--create');
-        }, timeRefresh);
-    }
-
-    function render(obj) {
-        unit.className = 'unit';
-        unit.classList.add(obj.type);
-        unitHit.textContent = `${Math.round(obj.hit/obj.maxHit * 100)}%`;
-
-        if (obj.hit <= 0) {
-            reset();
-        }
+    function enabledButton(enambleddBtns) {
+        enambleddBtns.forEach(function(btn) {
+            btn.classList.remove('btn--disabled');
+        });
     }
 });
