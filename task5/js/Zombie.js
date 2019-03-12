@@ -1,9 +1,12 @@
 function Zombie(type, callback, objectLocation) {
     var timeReboot = constants.ZOMBIE_DELETE_TIMEOUT;
+    var speed = constants.ZOMBIE_SPEED;
     var self = this;
     var layout;
     var health;
     var image;
+
+    var position = -100;
 
     this.type = type;
     this.maxHit = constants.ZOMBIE_MAX_HEALTH;
@@ -48,5 +51,24 @@ function Zombie(type, callback, objectLocation) {
 
     function render() {
         objectLocation.appendChild(layout);
+    }
+
+    var refreshInterval = setInterval(run, speed);
+
+    function run() {
+        if (position < objectLocation.clientWidth) {
+            layout.style.right = position + 'px';
+        } else {
+            callback('killed');
+            alert('Game over');
+            clearInterval(refreshInterval);
+
+            setTimeout(function () {
+                objectLocation.removeChild(layout);
+                callback('deleted');
+            }, timeReboot);
+        }
+
+        position++;
     }
 }
