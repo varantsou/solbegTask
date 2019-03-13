@@ -1,46 +1,30 @@
-function Engine(callback, objectLocation) {
-    var zombieObj = {};
-    var self = this;
+function Engine() {
 
-    this.createStrong = function() {
-        zombieObj = new ZombieStrong(function(eventName) {
-            // console.log('Engine callback ==', eventName);
+}
 
-            if (eventName === 'deleted') {
-                self.remove();
-            }
+(function () {
+    var zombieObj;
 
-            callback(eventName);
-        }, objectLocation);
-
+    Engine.prototype.createStrong = function () {
+        zombieObj = new ZombieStrong();
         zombieObj.createUnit();
     };
 
-    this.createMad = function () {
-        zombieObj = new ZombieMad(function(eventName) {
-            // console.log('Engine callback ==', eventName);
-
-            if (eventName === 'deleted') {
-                self.remove();
-            }
-
-            callback(eventName);
-        }, objectLocation);
-
+    Engine.prototype.createMad = function () {
+        zombieObj = new ZombieMad();
         zombieObj.createUnit();
     };
 
-    this.damage = function () {
+    Engine.prototype.damage = function () {
         zombieObj.hit -= 10;
+        console.log(zombieObj.hit);
         zombieObj.change(zombieObj.hit);
+        zombieObj.render();
     };
 
-    this.kill = function () {
+    Engine.prototype.kill = function () {
         zombieObj.hit = 0;
         zombieObj.change(zombieObj.hit);
+        zombieObj.render();
     };
-
-    this.remove = function () {
-        zombieObj = null;
-    };
-}
+}());

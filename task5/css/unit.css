@@ -3,7 +3,8 @@
     height: 100px;
     padding: 15px 0 0 0;
     position: absolute;
-    right: -100px;
+    right: 0;
+    /*right: -100px;*/
 }
 
 .unit__health {

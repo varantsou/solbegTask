@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(event) {
+
     var btnsCreate = document.querySelectorAll('.btn--create');
     var btnsChange = document.querySelectorAll('.btn--change');
     var btnCreateStrong = document.querySelector('.btn--create-strong');
@@ -7,55 +8,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var btnKill = document.querySelector('.btn--kill');
     var objectLocation = document.querySelector('.area');
 
-    var engine = new Engine(function(eventName) {
-        if (eventName === 'created') {
-            disableButton(btnsCreate);
-        } else if (eventName === 'killed') {
-            disableButton(btnsCreate);
-            disableButton(btnsChange);
-        } else if (eventName === 'deleted') {
-            disableButton(btnsChange);
-            enabledButton(btnsCreate);
-        }
-    }, objectLocation);
 
-    btnCreateStrong.addEventListener('click', function(event) {
-        if (!event.target.classList.contains('btn--disabled')) {
-            engine.createStrong();
-            disableButton(btnsCreate);
-            enabledButton(btnsChange);
-        }
-    });
+    var engine = new Engine();
 
-    btnCreateMad.addEventListener('click', function(event) {
-        if (!event.target.classList.contains('btn--disabled')) {
-            engine.createMad();
-            disableButton(btnsCreate);
-            enabledButton(btnsChange);
-        }
-    });
-
-    btnDamage.addEventListener('click', function(event) {
-        if (!event.target.classList.contains('btn--disabled')) {
-            engine.damage();
-        }
-    });
+    engine.createStrong();
+    // engine.createMad();
+    engine.damage();
 
     btnKill.addEventListener('click', function(event) {
-        if (!event.target.classList.contains('btn--disabled')) {
+        // if (!event.target.classList.contains('btn--disabled')) {
             engine.kill();
-        }
+        // }
     });
-
-    function disableButton(disabledBtns) {
-        disabledBtns.forEach(function(btn) {
-            btn.classList.add('btn--disabled');
-        });
-    }
-
-    function enabledButton(enambleddBtns) {
-        enambleddBtns.forEach(function(btn) {
-            btn.classList.remove('btn--disabled');
-        });
-    }
 });
