@@ -7,8 +7,8 @@ function Zombie(callback, objectLocation, className, maxHealth) {
     var layoutClassName = `unit__img ${className}` || 'unit__img';
     var maxHit = maxHealth || constants.ZOMBIE_MAX_HEALTH;
     var health = maxHit;
-
     var position = 0;
+    var refreshInterval = setInterval(run, speed);
 
     layout = document.createElement('div');
     layout.className = 'unit';
@@ -27,13 +27,21 @@ function Zombie(callback, objectLocation, className, maxHealth) {
 
     objectLocation.appendChild(layout);
 
-    var refreshInterval = setInterval(run, speed);
+    function finish() {
+        callback('killed');
+        clearInterval(refreshInterval);
+
+        setTimeout(function () {
+            objectLocation.removeChild(layout);
+            callback('deleted');
+        }, timeReboot);
+    }
 
     function updateHit() {
         healthLayout.textContent = `${Math.round(health / maxHit * 100)}%`;
 
-        if (health <= 0) {    
-            healthLayout.textContent = '0'
+        if (health <= 0) {
+            healthLayout.textContent = '0';
             image.classList.add('zombie-dead');
 
             finish();
@@ -48,9 +56,8 @@ function Zombie(callback, objectLocation, className, maxHealth) {
     this.kill = function() {
         health = 0;
         updateHit(health);
-    }
+    };
 
-    
     function run() {
         if (position < objectLocation.clientWidth) {
             layout.style.right = position + 'px';
@@ -59,15 +66,5 @@ function Zombie(callback, objectLocation, className, maxHealth) {
         }
 
         position++;
-    }
-
-    function finish() {
-        callback('killed');
-        clearInterval(refreshInterval);
-
-        setTimeout(function () {
-            objectLocation.removeChild(layout);
-            callback('deleted');
-        }, timeReboot);
     }
 }

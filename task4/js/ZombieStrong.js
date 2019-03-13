@@ -5,5 +5,5 @@ function ZombieStrong(callBack, objectLocation) {
 
     this.hit = function (damage) {
         parentHit(damage / 2);
-    }
+    };
 }
