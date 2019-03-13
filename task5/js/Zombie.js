@@ -1,11 +1,16 @@
-function Zombie(callback, objectLocation, className, maxHealth) {
+function Zombie(args) {
+    var callback = args.callback;
+    var objectLocation = args.objectLocation;
+    var layoutClassName = `unit__img ${args.className}` || 'unit__img';
+    var maxHit = args.maxHealth || constants.ZOMBIE_MAX_HEALTH;
+
     var timeReboot = constants.ZOMBIE_DELETE_TIMEOUT;
     var speed = constants.ZOMBIE_SPEED;
     var layout;
     var healthLayout;
     var image;
-    var layoutClassName = `unit__img ${className}` || 'unit__img';
-    var maxHit = maxHealth || constants.ZOMBIE_MAX_HEALTH;
+
+
     var health = maxHit;
     var position = 0;
     var refreshInterval = setInterval(run, speed);
@@ -43,7 +48,7 @@ function Zombie(callback, objectLocation, className, maxHealth) {
         if (health <= 0) {
             healthLayout.textContent = '0';
             image.classList.add('zombie-dead');
-
+            position = 0;
             finish();
         }
     }

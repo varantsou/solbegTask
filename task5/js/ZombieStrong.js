@@ -1,5 +1,11 @@
-function ZombieStrong(callBack, objectLocation) {
-    Zombie.call(this, callBack, objectLocation, 'zombie-strong');
+function ZombieStrong(callback, objectLocation) {
+    var args = {
+        callback,
+        objectLocation,
+        className: 'zombie-strong',
+    };
+
+    Zombie.call(this, args);
 
     var parentHit = this.hit;
 

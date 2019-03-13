@@ -1,5 +1,11 @@
-function ZombieMad(callBack, objectLocation) {
-    var maxHealth = constants.ZOMBIE_MAX_HEALTH / 2;
+function ZombieMad(callback, objectLocation) {
 
-    Zombie.call(this, callBack, objectLocation, 'zombie-mad', maxHealth);
+    var args = {
+        callback,
+        objectLocation,
+        className: 'zombie-mad',
+        maxHealth: constants.ZOMBIE_MAX_HEALTH / 2
+    };
+
+    Zombie.call(this, args);
 }
