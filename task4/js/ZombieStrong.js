@@ -1,6 +1,9 @@
 function ZombieStrong(callBack, objectLocation) {
-    Zombie.call(this, 'zombie-strong', callBack, objectLocation);
+    Zombie.call(this, callBack, objectLocation, 'zombie-strong');
 
-    this.maxHit = constants.ZOMBIE_MAX_HEALTH * 2;
-    this.hit = this.maxHit;
+    var parentHit = this.hit;
+
+    this.hit = function (damage) {
+        parentHit(damage / 2);
+    }
 }
