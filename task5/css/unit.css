@@ -35,6 +35,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    background-image: url('../img/zombie-strong.gif');
 }
 
 .zombie-mad {

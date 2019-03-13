@@ -1,50 +1,91 @@
 function Zombie() {
-    // this.maxHit = constants.ZOMBIE_MAX_HEALTH;
-    // this.hit = this.maxHit;
+
 }
 
 (function () {
+    var timeReboot = constants.ZOMBIE_DELETE_TIMEOUT;
+    var speed = constants.ZOMBIE_SPEED;
+    var objectLocation = document.querySelector('.area');
+    // var objectLocation;
     var layout;
-    var health;
+    var healthLayout;
     var image;
+    var layoutClassName = 'unit__img ';
 
-    // var type = 'zombie-default';
     var maxHit = constants.ZOMBIE_MAX_HEALTH;
-    var hit = constants.ZOMBIE_MAX_HEALTH;
+    var health = maxHit;
+
+    var position = 0;
+    var refreshInterval;
+
 
     Zombie.prototype.createUnit = function () {
-        console.log('Создал объект');
+        // objectLocation = this.objectLocation;
 
-        maxHit = this.maxHit;
-        type = this.type;
+        console.log(this);
+
+        layoutClassName += this.className;
+        maxHit = this.maxHit || maxHit;
+        health = maxHit;
 
         layout = document.createElement('div');
         layout.className = 'unit';
 
-        health = document.createElement('div');
-        health.className = 'unit__health';
-        health.textContent = `${Math.round(hit / maxHit * 100)}%`;
-        layout.appendChild(health);
+        healthLayout = document.createElement('div');
+        healthLayout.className = 'unit__health';
+        healthLayout.textContent = '100%';
+        layout.appendChild(healthLayout);
 
         image = document.createElement('div');
-        image.className = 'unit__img';
-        image.classList.add(type);
+        image.className = layoutClassName;
+
         layout.appendChild(image);
+        objectLocation.appendChild(layout);
+
+
+        // this.callback('created');
+
+        refreshInterval = setInterval(run, speed);
     };
 
-    Zombie.prototype.change = function (damage) {
-        health.textContent = `${Math.round(damage / maxHit * 100)}%`;
+    Zombie.prototype.updateHit = function() {
+        healthLayout.textContent = `${Math.round(health / maxHit * 100)}%`;
 
-        if (this.hit <= 0) {
-            image.classList.remove(this.type);
+        if (health <= 0) {
+            healthLayout.textContent = '0';
             image.classList.add('zombie-dead');
+            position = 0;
+            finish();
         }
     };
 
-    Zombie.prototype.render = function () {
-        var objectLocation = document.querySelector('.area');
-        // console.log(layout);
-        objectLocation.appendChild(layout);
-        console.log('Отрисовал');
+    Zombie.prototype.hit = function (damage) {
+        health -= damage;
+        Zombie.prototype.updateHit();
     };
+
+    Zombie.prototype.kill = function () {
+        health = 0;
+        Zombie.prototype.updateHit();
+    };
+
+    function run() {
+        if (position < objectLocation.clientWidth) {
+            layout.style.right = position + 'px';
+        } else {
+            finish();
+        }
+
+        position++;
+    }
+
+    function finish() {
+        // callback('killed');
+        clearInterval(refreshInterval);
+
+        setTimeout(function () {
+            objectLocation.removeChild(layout);
+            // callback('deleted');
+        }, timeReboot);
+    }
 }());
