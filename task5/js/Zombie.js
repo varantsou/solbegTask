@@ -1,7 +1,8 @@
 function Zombie(args) {
     var callback = args.callback;
-    var objectLocation = args.objectLocation;
-    var layoutClassName = `unit__img ${args.className}` || 'unit__img';
+    var container = args.container;
+
+    var layoutClassName = args.className ? `unit__img ${args.className}` : 'unit__img';
     var maxHit = args.maxHealth || constants.ZOMBIE_MAX_HEALTH;
 
     var timeReboot = constants.ZOMBIE_DELETE_TIMEOUT;
@@ -28,16 +29,15 @@ function Zombie(args) {
 
     layout.appendChild(image);
 
-    callback('created');
+    container.appendChild(layout);
 
-    objectLocation.appendChild(layout);
+    callback('created');
 
     function finish() {
         callback('killed');
         clearInterval(refreshInterval);
-
         setTimeout(function () {
-            objectLocation.removeChild(layout);
+            container.removeChild(layout);
             callback('deleted');
         }, timeReboot);
     }
@@ -47,7 +47,7 @@ function Zombie(args) {
 
         if (health <= 0) {
             healthLayout.textContent = '0';
-            image.classList.add('zombie-dead');
+            image.classList.add('unit__zombie-dead');
             position = 0;
             finish();
         }
@@ -64,7 +64,7 @@ function Zombie(args) {
     };
 
     function run() {
-        if (position < objectLocation.clientWidth) {
+        if (position < container.clientWidth) {
             layout.style.right = position + 'px';
         } else {
             finish();

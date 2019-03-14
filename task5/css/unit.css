@@ -36,15 +36,15 @@
     background-size: contain;
 }
 
-.zombie-mad {
+.unit__zombie-mad {
     background-image: url('../img/zombie-mad.gif');
 }
 
-.zombie-strong {
+.unit__zombie-strong {
     background-image: url('../img/zombie-strong.gif');
 }
 
-.zombie-dead {
+.unit__zombie-dead {
     background-image: url('../img/zombie-dead.gif');
 }
 

@@ -1,25 +1,25 @@
-function Engine(callback, objectLocation) {
+function Engine(container, callback) {
     var zombieObj = {};
     var hitDamage = constants.ZOMBIE_HIT_DAMAGE;
 
     this.createStrong = function() {
-        zombieObj = new ZombieStrong(function(eventName) {
+        zombieObj = new ZombieStrong(container, function(eventName) {
             if (eventName === 'deleted') {
                 zombieObj = null;
             }
 
             callback(eventName);
-        }, objectLocation);
+        });
     };
 
     this.createMad = function () {
-        zombieObj = new ZombieMad(function(eventName) {
+        zombieObj = new ZombieMad(container, function(eventName) {
             if (eventName === 'deleted') {
                 zombieObj = null;
             }
 
             callback(eventName);
-        }, objectLocation);
+        });
     };
 
     this.damage = function () {

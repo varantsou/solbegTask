@@ -1,8 +1,8 @@
-function ZombieStrong(callback, objectLocation) {
+function ZombieStrong(container, callback) {
     var args = {
         callback,
-        objectLocation,
-        className: 'zombie-strong',
+        container,
+        className: 'unit__zombie-strong',
     };
 
     Zombie.call(this, args);
