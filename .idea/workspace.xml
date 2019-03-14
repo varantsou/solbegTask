@@ -3,15 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1181362f-825c-48a3-8a5c-385b8e6c3566" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task5/css/area.css" beforeDir="false" afterPath="$PROJECT_DIR$/task5/css/area.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task5/css/button.css" beforeDir="false" afterPath="$PROJECT_DIR$/task5/css/button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task5/css/unit.css" beforeDir="false" afterPath="$PROJECT_DIR$/task5/css/unit.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task5/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/task5/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task5/js/Engine.js" beforeDir="false" afterPath="$PROJECT_DIR$/task5/js/Engine.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task5/js/Zombie.js" beforeDir="false" afterPath="$PROJECT_DIR$/task5/js/Zombie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task5/js/ZombieMad.js" beforeDir="false" afterPath="$PROJECT_DIR$/task5/js/ZombieMad.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task5/js/ZombieStrong.js" beforeDir="false" afterPath="$PROJECT_DIR$/task5/js/ZombieStrong.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task5/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/task5/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,8 +19,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/task5/js/Engine.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state>
+              <caret column="35" selection-start-column="27" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -37,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/task5/css/unit.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="782">
-              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+              <caret line="46" selection-start-line="46" selection-end-line="46" />
             </state>
           </provider>
         </entry>
@@ -46,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/task5/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+              <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -54,8 +46,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/task5/js/Zombie.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="-451">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -69,7 +61,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/task5/js/ZombieMad.js">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -78,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/task5/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="7" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+            <state relative-caret-position="288">
+              <caret line="57" column="7" selection-start-line="57" selection-start-column="7" selection-end-line="57" selection-end-column="7" />
               <folding>
                 <marker date="1552547003629" expanded="true" signature="415:1025" ph="..." />
               </folding>
@@ -130,9 +122,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1849" />
-    <option name="y" value="99" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-1928" />
+    <option name="y" value="-8" />
     <option name="width" value="912" />
     <option name="height" value="839" />
   </component>
@@ -148,23 +140,6 @@
             <path>
               <item name="task" type="b2602c69:ProjectViewProjectNode" />
               <item name="task" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="task" type="b2602c69:ProjectViewProjectNode" />
-              <item name="task" type="462c0819:PsiDirectoryNode" />
-              <item name="task5" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="task" type="b2602c69:ProjectViewProjectNode" />
-              <item name="task" type="462c0819:PsiDirectoryNode" />
-              <item name="task5" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="task" type="b2602c69:ProjectViewProjectNode" />
-              <item name="task" type="462c0819:PsiDirectoryNode" />
-              <item name="task5" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -210,12 +185,12 @@
       <workItem from="1552291755635" duration="565000" />
       <workItem from="1552293904148" duration="27990000" />
       <workItem from="1552373693809" duration="1823000" />
-      <workItem from="1552544796015" duration="2293000" />
+      <workItem from="1552544796015" duration="3381000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42532000" />
+    <option name="totallyTimeSpent" value="43620000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
@@ -233,7 +208,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.0780065" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.26977247" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -321,11 +296,6 @@
         <state relative-caret-position="85">
           <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1377" />
       </provider>
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
@@ -417,17 +387,10 @@
     <entry file="file://$PROJECT_DIR$/task5/css/main.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/task5/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/task5/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -441,31 +404,28 @@
     <entry file="file://$PROJECT_DIR$/task5/css/unit.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
-          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task5/js/Zombie.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task5/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="7" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
-          <folding>
-            <marker date="1552547003629" expanded="true" signature="415:1025" ph="..." />
-          </folding>
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/task5/js/Engine.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        <state>
+          <caret column="35" selection-start-column="27" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task5/js/Zombie.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-451">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task5/js/ZombieMad.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="30" selection-start-column="30" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -476,10 +436,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task5/js/ZombieMad.js">
+    <entry file="file://$PROJECT_DIR$/task5/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="30" selection-start-column="30" selection-end-column="30" />
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1071" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task5/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="57" column="7" selection-start-line="57" selection-start-column="7" selection-end-line="57" selection-end-column="7" />
+          <folding>
+            <marker date="1552547003629" expanded="true" signature="415:1025" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
